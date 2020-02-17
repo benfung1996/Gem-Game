@@ -59,15 +59,33 @@ $(document).ready(function() {
             alert("Winner!!");
             wins++;
             $("#wins").text(wins);
+            reset();
         }
 
         else if (counter > ranNum) {
             alert("Losser!!");
             losses++;
             $("#losses").text(losses);
+            reset();
         }
     };
 
+    function reset() {
+
+        ranNum = Math.floor((Math.random() *  102) +19);
+
+        $("#random-number").text(ranNum);
+
+        counter = 0;
+        
+        $("#score").text(counter);
+    
+        redValue = Math.floor((Math.random() * 12) +1);
+        blueValue = Math.floor((Math.random() * 12) +1);
+        goldValue = Math.floor((Math.random() * 12) +1);
+        greenValue = Math.floor((Math.random() * 12) +1);
+
+    };
 
 });
 
